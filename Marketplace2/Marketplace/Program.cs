@@ -18,6 +18,8 @@ namespace Marketplace
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
+            System.Text.Encoding.RegisterProvider(System.Text.CodePagesEncodingProvider.Instance);
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
 
             if (app.Environment.IsDevelopment())
             {
@@ -33,44 +35,59 @@ namespace Marketplace
             using (var scope = app.Services.CreateScope())
             {
                 var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                db.Database.EnsureDeleted();
                 db.Database.EnsureCreated();
 
                 if (!db.Products.Any())
                 {
                     db.Products.AddRange(
-                        new Product
+                                   new Product
                         {
-                            Name = "Смартфон Galaxy S23",
+                            Name = "РЎРјР°СЂС‚С„РѕРЅ Galaxy S23",
                             Price = 69999.99m,
                             Quantity = 50,
-                            Category = "Электроника",
-                            Description = "Мощный смартфон с отличной камерой",
+                            Category = "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
+                            Description = "РњРѕС‰РЅС‹Р№ СЃРјР°СЂС‚С„РѕРЅ СЃ РѕС‚Р»РёС‡РЅРѕР№ РєР°РјРµСЂРѕР№ Рё Р±С‹СЃС‚СЂС‹Рј РїСЂРѕС†РµСЃСЃРѕСЂРѕРј",
                             IsAvailable = true,
-                            CreatedAt = DateTime.Now
+                            CreatedAt = DateTime.Now,
+                            ImageUrl = ""
                         },
                         new Product
                         {
-                            Name = "Ноутбук MacBook Air",
+                            Name = "РќРѕСѓС‚Р±СѓРє MacBook Air",
                             Price = 99999.99m,
                             Quantity = 25,
-                            Category = "Электроника",
-                            Description = "Легкий и мощный ноутбук",
+                            Category = "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
+                            Description = "Р›РµРіРєРёР№ Рё РјРѕС‰РЅС‹Р№ РЅРѕСѓС‚Р±СѓРє РґР»СЏ СЂР°Р±РѕС‚С‹ Рё СѓС‡РµР±С‹",
                             IsAvailable = true,
-                            CreatedAt = DateTime.Now
+                            CreatedAt = DateTime.Now,
+                            ImageUrl = ""
                         },
                         new Product
                         {
-                            Name = "Беспроводные наушники",
+                            Name = "Р‘РµСЃРїСЂРѕРІРѕРґРЅС‹Рµ РЅР°СѓС€РЅРёРєРё",
                             Price = 12999.99m,
                             Quantity = 100,
-                            Category = "Электроника",
-                            Description = "Наушники с активным шумоподавлением",
+                            Category = "Р­Р»РµРєС‚СЂРѕРЅРёРєР°",
+                            Description = "РќР°СѓС€РЅРёРєРё СЃ Р°РєС‚РёРІРЅС‹Рј С€СѓРјРѕРїРѕРґР°РІР»РµРЅРёРµРј",
                             IsAvailable = true,
-                            CreatedAt = DateTime.Now
+                            CreatedAt = DateTime.Now,
+                            ImageUrl = ""
+                        },
+                        new Product
+                        {
+                            Name = "РљСЂРѕСЃСЃРѕРІРєРё Nike Air",
+                            Price = 8999.99m,
+                            Quantity = 40,
+                            Category = "РћРґРµР¶РґР°",
+                            Description = "РЈРґРѕР±РЅС‹Рµ СЃРїРѕСЂС‚РёРІРЅС‹Рµ РєСЂРѕСЃСЃРѕРІРєРё РґР»СЏ Р±РµРіР°",
+                            IsAvailable = true,
+                            CreatedAt = DateTime.Now,
+                            ImageUrl = ""
                         }
                     );
                     db.SaveChanges();
-                    Console.WriteLine("? Тестовые товары добавлены!");
+                    Console.WriteLine("РўРµСЃС‚РѕРІС‹Рµ С‚РѕРІР°СЂС‹ СѓСЃРїРµС€РЅРѕ РґРѕР±Р°РІР»РµРЅС‹ РІ Р±Р°Р·Сѓ РґР°РЅРЅС‹С…!");
                 }
             }
 
