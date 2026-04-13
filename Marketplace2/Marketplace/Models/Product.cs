@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Marketplace.Models
+namespace Marketplace.Models  // ← ЭТОГО НЕ ХВАТАЕТ!
 {
     public class Product
     {
@@ -16,15 +16,11 @@ namespace Marketplace.Models
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
-
         public string Category { get; set; } = "Без категории";
-
         public string Description { get; set; } = string.Empty;
-
         public bool IsAvailable { get; set; } = true;
-
         public DateTime CreatedAt { get; set; } = DateTime.Now;
-
-        public string ImageUrl { get; set; } = string.Empty;
+        public string? ImageUrl { get; set; }
     }
+
 }
