@@ -3097,23 +3097,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\barsa\\.nuget\\packages\\": {},
+    "C:\\Users\\st403\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GITHUB\\dgfdgfg\\Marketplace2\\Marketplace\\Marketplace.csproj",
+      "projectUniqueName": "D:\\P-30 Bars\\Marketplace2\\Marketplace\\Marketplace.csproj",
       "projectName": "Marketplace",
-      "projectPath": "C:\\GITHUB\\dgfdgfg\\Marketplace2\\Marketplace\\Marketplace.csproj",
-      "packagesPath": "C:\\Users\\barsa\\.nuget\\packages\\",
-      "outputPath": "C:\\GITHUB\\dgfdgfg\\Marketplace2\\Marketplace\\obj\\",
+      "projectPath": "D:\\P-30 Bars\\Marketplace2\\Marketplace\\Marketplace.csproj",
+      "packagesPath": "C:\\Users\\st403\\.nuget\\packages\\",
+      "outputPath": "D:\\P-30 Bars\\Marketplace2\\Marketplace\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\barsa\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\st403\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3178,7 +3178,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
